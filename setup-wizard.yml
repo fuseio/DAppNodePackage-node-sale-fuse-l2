@@ -1,0 +1,81 @@
+version: "2"
+fields:
+  - id: network
+    target:
+      type: environment
+      name: NETWORK
+      service: node-sale-fuse-l2
+    title: Network
+    description: >-
+      Network name. [More info](https://www.fuse.io/node-sale). Client supports only two networks: Flash & Ember.
+    enum:
+      - Flash
+      - Ember
+    secret: false
+    required: true
+  - id: availEvmAddress
+    target:
+      type: environment
+      name: AVAIL_EVM_ADDRESS
+      service: node-sale-fuse-l2
+    title: NFT delegation address
+    description: >-
+      EVM - compatible address which is holding NFT.
+    pattern: "^0x[a-fA-F0-9]{40}$"
+    patternErrorMessage: Must be a valid address (0x1fd16a...)
+    secret: false
+    required: true
+  - id: availCheckNftInterval
+    target:
+      type: environment
+      name: AVAIL_CHECK_NFT_INTERVAL
+      service: node-sale-fuse-l2
+    title: Check interval
+    description: >-
+      NFT check interval. Should be in ms (default: 300).
+    pattern: "\\b([5-9]|[1-9]\\d|1\\d{2}|2\\d{2}|300)\\b"
+    patternErrorMessage: Must be a valid value; min - 5, max - 300
+    secret: false
+    required: false
+  - id: availComissionRat
+    target:
+      type: environment
+      name: AVAIL_COMISSION_RATE
+      service: node-sale-fuse-l2
+    title: Comission rate
+    description: >-
+      Comission for delegation (default: 5).
+    pattern: "\\b(0|[1-9]|10)\\b"
+    patternErrorMessage: Must be a valid value; min - 0, max - 10
+    secret: false
+    required: false
+  - id: availOperatorName
+    target:
+      type: environment
+      name: AVAIL_OPERATOR_NAME
+      service: node-sale-fuse-l2
+    title: Operator name
+    description: >-
+      Operator name (default: DAppNode operator).
+    secret: false
+    required: false
+  - id: availRewardCollectorAddress
+    target:
+      type: environment
+      name: AVAIL_REWARD_COLLECTOR_ADDRESS
+      service: node-sale-fuse-l2
+    title: Reward collector address
+    description: >-
+      Reward collector address (default: 0x).
+    secret: false
+    required: false
+  - id: extraFlag
+    target:
+      type: environment
+      name: EXTRA_FLAGS
+      service: node-sale-fuse-l2
+    title: Extra flags
+    description: >-
+      Avail light client extra flags. The default flags used to run the client are: `--config config.yaml --network mainnet --avail-path /data`. Please check the [docs](https://docs.availproject.org/docs/welcome-to-avail-docs) to see the full list of possible flags.
+    secret: false
+    required: false
