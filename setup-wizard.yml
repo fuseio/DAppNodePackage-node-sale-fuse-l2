@@ -13,16 +13,28 @@ fields:
       - Ember
     secret: false
     required: true
-  - id: availEvmAddress
+  - id: privateKey
     target:
       type: environment
-      name: AVAIL_EVM_ADDRESS
+      name: PRIVATE_KEY
       service: node-sale-fuse-l2
-    title: NFT delegation address
+    title: Private key
     description: >-
-      EVM - compatible address which is holding NFT.
+      EVM - compatible wallet's secret private key which is holding / delegating NFT.
+    pattern: "^0x[a-fA-F0-9]{64}$"
+    patternErrorMessage: Must be a valid private key format (0x1fd16a...)
+    secret: true
+    required: true
+  - id: rewardCollectorAddress
+    target:
+      type: environment
+      name: REWARD_COLLECTOR_ADDRESS
+      service: node-sale-fuse-l2
+    title: Reward collector address
+    description: >-
+      EVM - compatible reward's collector address which should get commission rewards.
     pattern: "^0x[a-fA-F0-9]{40}$"
-    patternErrorMessage: Must be a valid address (0x1fd16a...)
+    patternErrorMessage: Must be a valid address format (0x1fd16a...)
     secret: false
     required: true
   - id: availCheckNftInterval
@@ -57,16 +69,6 @@ fields:
     title: Operator name
     description: >-
       Operator name (default: DAppNode operator).
-    secret: false
-    required: false
-  - id: availRewardCollectorAddress
-    target:
-      type: environment
-      name: AVAIL_REWARD_COLLECTOR_ADDRESS
-      service: node-sale-fuse-l2
-    title: Reward collector address
-    description: >-
-      Reward collector address (default: 0x).
     secret: false
     required: false
   - id: extraFlag

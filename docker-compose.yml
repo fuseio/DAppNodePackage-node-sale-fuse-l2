@@ -6,18 +6,18 @@ services:
     image: node-sale-fuse-l2.node-sale-fuse-l2.public.dappnode.eth:0.1.0
     environment:
       - NETWORK=
-      - AVAIL_EVM_ADDRESS=
+      - PRIVATE_KEY=
+      - REWARD_COLLECTOR_ADDRESS=
       - AVAIL_CHECK_NFT_INTERVAL=
       - AVAIL_COMISSION_RATE=
       - AVAIL_OPERATOR_NAME=
-      - AVAIL_REWARD_COLLECTOR_ADDRESS=
       - EXTRA_FLAGS=
     ports:
       - 39000:39000/tcp
       - 39000:39000/udp
       - 7007:7007/tcp
     volumes:
-      - "avail-node_data:/data"
+      - avail-node_data:/data
     restart: unless-stopped
 volumes:
   avail-node_data: {}
