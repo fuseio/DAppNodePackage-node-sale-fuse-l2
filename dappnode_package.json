@@ -1,15 +1,27 @@
 {
   "name": "node-sale-fuse-l2.public.dappnode.eth",
-  "version": "0.1.0",
-  "shortDescription": "Package used to participate in Node Sale for Fuse L2 networks, Flash (testnet) and / or Ember (mainnet), to run Avail light client with appropriate licence.",
-  "description": "Welcome! As we prepare to launch zkEVM-powered Fuse Flash / Ember L2 in Q2 2025, we are offering 12,000 exclusive node licenses. If you are new to Avail & Node Sale, check [Avail light client](https://docs.availproject.org/docs/operate-a-node/run-a-light-client/Overview) and [Node Sale](https://www.fuse.io/node-sale) documentation for an easy overview.",
+  "version": "0.2.0",
+  "upstreamVersion": "1.0.4",
+  "shortDescription": "Runs the Avail light client with a valid license to participate in the Node Sale for Fuse L2 Flash (testnet) and Ember (mainnet).",
+  "description": "Welcome to the Node Sale for Fuse L2! This DAppNode package enables you to run an Avail light client node, securing the zkEVM-powered Fuse Flash and Ember L2 networks. A total of 12,000 exclusive node licenses are available ahead of the Q2 2025 launch. If you're new to Avail & Fuse Node Sale, explore the [Avail light client documentation](https://docs.availproject.org/docs/operate-a-node/run-a-light-client/Overview), [API references](https://docs.availproject.org/api-reference/avail-lc-api), and [Node Sale details](https://www.fuse.io/node-sale) to get started.",
   "type": "service",
+  "architectures": ["linux/amd64"],
+  "mainService": "node-sale-fuse-l2",
+  "requirements": {
+    "minimumDappnodeVersion": "0.2.103"
+  },
   "exposable": [
     {
       "name": "Avail P2P",
       "description": "P2P endpoint for Avail node",
       "serviceName": "node-sale-fuse-l2",
-      "port": 39000
+      "port": 37000
+    },
+    {
+      "name": "Avail P2P WebRTC",
+      "description": "P2P WebRTC endpoint for Avail node",
+      "serviceName": "node-sale-fuse-l2",
+      "port": 37001
     },
     {
       "name": "Avail JSON RPC",
@@ -21,24 +33,22 @@
       "name": "Avail WebSocket",
       "description": "WebSocket endpoint for Avail node",
       "serviceName": "node-sale-fuse-l2",
-      "port": 7007
+      "port": 9944
     }
   ],
   "author": "Fuse Network <hello@fuse.io> (https://github.com/fuseio)",
-  "categories": [
-    "Developer tools",
-    "Blockchain"
-  ],
-  "keywords": [
-    "Avail"
-  ],
+  "categories": ["Developer tools", "Blockchain"],
+  "keywords": ["Node", "Sale", "Fuse", "L2"],
   "links": {
-    "homepage": "https://fuse.io"
+    "homepage": "https://github.com/fuseio/DAppNodePackage-node-sale-fuse-l2",
+    "api": "http://node-sale-fuse-l2.public.dappnode:7007"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fuseio/DAppNodePackage-node-sale-fuse-l2.git",
-    "directory": ""
+    "url": "https://github.com/fuseio/DAppNodePackage-node-sale-fuse-l2.git"
   },
-  "license": "GPL-3.0"
+  "bugs": {
+    "url": "https://github.com/fuseio/DAppNodePackage-node-sale-fuse-l2/issues"
+  },
+  "license": "LGPL-3.0"
 }

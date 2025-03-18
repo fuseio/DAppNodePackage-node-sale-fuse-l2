@@ -3,19 +3,23 @@ services:
   node-sale-fuse-l2:
     build:
       context: .
-    image: node-sale-fuse-l2.node-sale-fuse-l2.public.dappnode.eth:0.1.0
+      args:
+        UPSTREAM_VERSION: 1.0.4
+    image: node-sale-fuse-l2.node-sale-fuse-l2.public.dappnode.eth:0.2.1
     environment:
       - NETWORK=
       - PRIVATE_KEY=
       - REWARD_COLLECTOR_ADDRESS=
-      - AVAIL_CHECK_NFT_INTERVAL=
-      - AVAIL_COMISSION_RATE=
-      - AVAIL_OPERATOR_NAME=
-      - EXTRA_FLAGS=
+      - CHECK_NFT_INTERVAL=
+      - COMISSION_RATE=
+      - EXTRA_OPTS=
     ports:
-      - 39000:39000/tcp
-      - 39000:39000/udp
+      - 37000:37000/tcp
+      - 37000:37000/udp
+      - 37001:37001/tcp
+      - 37001:37001/udp
       - 7007:7007/tcp
+      - 9944:9944/tcp
     volumes:
       - avail-node_data:/data
     restart: unless-stopped

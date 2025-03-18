@@ -1,8 +1,16 @@
 {
   "0.1.0": {
-    "hash": "/ipfs/QmTWMP8eUaamPgBjH6uDcVEaNwMSpL7VjV4Y3PbreNqxJz",
+    "hash": "/ipfs/QmYJ6YKAgV2dZVnzv73Yz2Z3s2zuUjHczpZt2fzk9D8eSF",
     "uploadedTo": {
-      "remote": "Wed, 12 Mar 2025 15:04:34 GMT"
-    }
+      "https://api.ipfs.dappnode.io": "Mon, 17 Mar 2025 18:16:02 GMT"
+    },
+    "link": "https://dappnode.github.io/sdk-publish/?r=node-sale-fuse-l2.public.dappnode.eth&v=0.1.0&h=%2Fipfs%2FQmYJ6YKAgV2dZVnzv73Yz2Z3s2zuUjHczpZt2fzk9D8eSF&d=0x1d09d264589CACFa87854Ea2b3AFd8d28ceFb2a7"
+  },
+  "0.2.0": {
+    "hash": "/ipfs/QmQLDp8pZSNW6VXuF9aLMQnqra5rwaTAgJRTNWFcCH9szs",
+    "uploadedTo": {
+      "https://api.ipfs.dappnode.io": "Mon, 17 Mar 2025 18:24:33 GMT"
+    },
+    "link": "https://dappnode.github.io/sdk-publish/?r=node-sale-fuse-l2.public.dappnode.eth&v=0.2.0&h=%2Fipfs%2FQmQLDp8pZSNW6VXuF9aLMQnqra5rwaTAgJRTNWFcCH9szs"
   }
 }

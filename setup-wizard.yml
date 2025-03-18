@@ -37,47 +37,37 @@ fields:
     patternErrorMessage: Must be a valid address format (0x1fd16a...)
     secret: false
     required: true
-  - id: availCheckNftInterval
+  - id: checkNftInterval
     target:
       type: environment
-      name: AVAIL_CHECK_NFT_INTERVAL
+      name: CHECK_NFT_INTERVAL
       service: node-sale-fuse-l2
     title: Check interval
     description: >-
-      NFT check interval. Should be in ms (default: 300).
-    pattern: "\\b([5-9]|[1-9]\\d|1\\d{2}|2\\d{2}|300)\\b"
-    patternErrorMessage: Must be a valid value; min - 5, max - 300
+      NFT check interval.
+    pattern: "\\b(6\\d|[78]\\d|9\\d|1\\d{2}|2\\d{2}|300)\\b"
+    patternErrorMessage: Must be a valid value in ms; min - 60, max - 300
     secret: false
-    required: false
-  - id: availComissionRat
+    required: true
+  - id: comissionRate
     target:
       type: environment
-      name: AVAIL_COMISSION_RATE
+      name: COMISSION_RATE
       service: node-sale-fuse-l2
     title: Comission rate
     description: >-
-      Comission for delegation (default: 5).
+      Comission rate for delegation in %.
     pattern: "\\b(0|[1-9]|10)\\b"
     patternErrorMessage: Must be a valid value; min - 0, max - 10
     secret: false
-    required: false
-  - id: availOperatorName
+    required: true
+  - id: extraOpts
     target:
       type: environment
-      name: AVAIL_OPERATOR_NAME
+      name: EXTRA_OPTS
       service: node-sale-fuse-l2
-    title: Operator name
+    title: Extra arguments
     description: >-
-      Operator name (default: DAppNode operator).
-    secret: false
-    required: false
-  - id: extraFlag
-    target:
-      type: environment
-      name: EXTRA_FLAGS
-      service: node-sale-fuse-l2
-    title: Extra flags
-    description: >-
-      Avail light client extra flags. The default flags used to run the client are: `--config config.yaml --network mainnet --avail-path /data`. Please check the [docs](https://docs.availproject.org/docs/welcome-to-avail-docs) to see the full list of possible flags.
+      Avail LC extra arguments. The default arguments used to run the client are: `--config config.yaml --network mainnet`. Please check the [docs](https://docs.availproject.org/docs/welcome-to-avail-docs) to see the full list of possible arguments.
     secret: false
     required: false
